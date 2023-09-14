@@ -45,6 +45,8 @@ function game(result){                // após cada ronda, conta os pontos do ve
             }
             document.getElementById('pl_points').innerHTML = human
             document.getElementById('pc_points').innerHTML = pc
+            document.getElementById('pl_moves').innerHTML = pl_moves;
+            document.getElementById('pc_moves').innerHTML = pc_moves;
         }
     if (human==5 && pc ==5 ){
         info = 'A tie ! The world hangs while Ultron demands another round!'
@@ -65,8 +67,6 @@ document.getElementById('inf').innerHTML = info
 function playRound(player,computer){
     pl_moves.push(player)
     pc_moves.push(computer)
-    document.getElementById('pl_moves').innerHTML = pl_moves;
-    document.getElementById('pc_moves').innerHTML = pc_moves;
     if (player == computer){
         document.getElementById('inf').innerHTML ="It's a Drawn";
         return '0'
