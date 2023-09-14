@@ -10,10 +10,11 @@ function computerPlay(){
     else{
         message ='Scissors'
     }
-    message = message.toLowerCase();
-    return message
+    return (message)
 }
 
+
+/*             Este código permite introduzir a opção manualmente
 function playerSelection(){
     const choice = prompt('Rock, Paper or Scissors?');
     const realChoice = choice.toLowerCase();
@@ -24,76 +25,113 @@ function playerSelection(){
         return('Invalid Entry! Try again!');
     }
 }
+*/
 
-function playing(player,pc){
+let pc =0;
+let human = 0;
+let pc_moves = [] ;
+let pl_moves = [] ;
+function game(result){                // após cada ronda, conta os pontos do vencedor
+    if (human < 5 && pc <5){
+            if (result == '1'){
+                human++
+            }
+            else if (result== '2' ){
+                pc++
+            }
+            else if (result== '0'){
+                human++ ;
+                pc++ ;
+            }
+            document.getElementById('pl_points').innerHTML = human
+            document.getElementById('pc_points').innerHTML = pc
+        }
+    if (human==5 && pc ==5 ){
+        info = 'A tie ! The world hangs while Ultron demands another round!'
+    }
+    else if (pc==5){
+        info = 'You lost! Humanity is dommed!'
+    }
+    else if (human == 5){
+        info = 'Hurrah! You defeated Ultron!'
+    }
+    document.getElementById('inf').innerHTML =info;
+    }
 
-    if (player == pc){
-        return(`It's a Drawn`)
+
+let info = 'The world is in danger, Ultron has defeated every hero left and it all comes down to a Rock Paper Scissors Game ???? \n What is your first move ?'
+document.getElementById('inf').innerHTML = info
+
+function playRound(player,computer){
+    pl_moves.push(player)
+    pc_moves.push(computer)
+    document.getElementById('pl_moves').innerHTML = pl_moves;
+    document.getElementById('pc_moves').innerHTML = pc_moves;
+    if (player == computer){
+        document.getElementById('inf').innerHTML ="It's a Drawn";
+        return '0'
     }
     else{
         switch (player) {
-            case 'rock' :
-                if (pc == 'scissors'){
-                    return(`You Win! ${player} beats ${pc}`);
+            case 'Rock' :
+                if (computer == 'Scissors'){
+                    info = `You Win!' ${player} beats ${computer}`;
+                    document.getElementById('inf').innerHTML = info;
+                    return '1';
                 }
                 else{
-                    return(`You Lose! ${pc} beats ${player}`);
+                    info = `You Lose! ${computer} beats ${player}`;
+                    document.getElementById('inf').innerHTML = info;
+                    return '2' ;
                 }
-            case 'paper' :
-                if (pc == 'rock'){
-                    return(`You Win! ${player} beats ${pc}`);
+            case 'Paper' :
+                if (computer == 'Rock'){
+
+                    info = `You Win! ${player} beats ${computer}`;
+                    document.getElementById('inf').innerHTML = info;
+                    return '1'
                 }
                 else{
-                    return(`You Lose! ${pc} beats ${player}`);
+                    info = `You Lose! ${computer} beats ${player}`;
+                    document.getElementById('inf').innerHTML = info;
+                    return '2'
                 }
 
-            case 'scissors':
-                if (pc == 'paper'){
-                    return(`You Win! ${player} beats ${pc}`);
+            case 'Scissors':
+                if (computer == 'Paper'){
+                    info = `You Win! ${player} beats ${computer}`;
+                    document.getElementById('inf').innerHTML = info;
+                    return '1'
                 }
                 else{
-                    return(`You Lose! ${pc} beats ${player}`);
+                    info = `You Lose! ${computer} beats ${player}`;
+                    document.getElementById('inf').innerHTML = info;
+                    return '2'
                 }
-            case 'Invalid Entry! Try again!':
-                return('Invalid Entry! Try again!')
             }
-    }
-}
-
-
-
-
-function game(){
-    let pc =0
-    let human =0
-    for (let i=0 ; i<5; i++){
-        let ver = playing(playerSelection(),computerPlay()) ;
-        console.log(ver);
-        let result = ver.split('!');    // splits the message returned by playing()
-        result = result[0];
-        if (result =='You Win'){
-            human++
         }
-        else if (result=='You Lose'){
-            pc++
-        }
-        else if (result=='Invalid Entry'){
-            i--
-        }
-        else{
-            human++ ;
-            pc++ ;
-        }
-        console.log(`You: ${human}  PC: ${pc}`)
     }
-    if (human>pc){
-        console.log(`You won by ${human-pc} points!`)
-    }
-    else {
-        console.log('Better luck next time!')
-    }
-}
+
+let move 
+
+move = document.getElementById('rock').addEventListener('click',function() {
+    game(playRound('Rock',computerPlay()))});
+move =document.getElementById('paper').addEventListener('click',function() {
+     game(playRound('Paper',computerPlay()))});
+move = document.getElementById('scissors').addEventListener('click', function() {
+    game(playRound('Scissors',computerPlay()))});
 
 
-game();
+document.getElementById('restart').addEventListener('click', function(){
+    pc =0;
+    human = 0;
+    pc_moves = [] ;
+    pl_moves = [] ;
+    document.getElementById('pl_points').innerHTML = '';
+    document.getElementById('pc_points').innerHTML = '';
+    info = 'The world is in danger, Ultron has defeated every hero left and it all comes down to a Rock Paper Scissors Game ???? \n What is your first move ?' ;
+    document.getElementById('inf').innerHTML = info;
+
+} );
+
 

@@ -4,9 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rockPaperScissors.css" />
     <title>Rock Paper Scissors !!!</title>
 </head>
 <body>
+<div class = 'main'>
+    <div class = 'title'> 
+        <div id = 't1'>Rock</div>
+        <div id = 't2'>Paper</div>
+        <div id = 't3'>Scissors</div>
+    </div>
+    <div id = 'inf'></div>
+    <div class = 'results'> 
+        <div class = 'player'> 
+            <div class = 'pl_sum'>
+                <div id = 'pl_id'>You:</div>
+                <div id = 'pl_points'></div>
+            </div>
+            <div class = 'pl_record'>
+                <div >Your Moves:</div>
+                <div id ='pl_moves'></div>
+            </div>
+        </div>
+        <div class = 'pc' > 
+            <div class = 'pc_sum'>
+                <div id = 'pc_id' >Ultron:</div>
+                <div id = 'pc_points'></div>
+            </div>
+            <div class = 'pc_record'>
+                <div>Ultron`s Moves:</div>
+                <div id = 'pc_moves'></div>
+            </div>
+        </div>
+
+    </div>
+    <div class = 'bts'>
+        <button id = 'rock'></Button>
+        <button id = 'paper'></Button>
+        <button id = 'scissors'></Button>
+    </div>
+    <div class = 'footer'>
+        <button id = 'restart'> New Game</button>
+    </div>
+    </div>
     <script src="rockPaperScissors.js"></script>
 </body>
 </html>

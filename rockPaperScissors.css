@@ -1,0 +1,128 @@
+body{
+    display: flex;
+    margin:0;
+    flex-direction: column;
+
+}
+.main{
+    display:flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    margin: 0;
+
+}
+
+.title{
+    display: flex;
+    padding: 40px;
+    justify-content:space-evenly;
+    font-weight: bold;
+    font-size: xx-large;
+    
+}
+.results{
+
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    gap: 50px;
+    padding: 120px ;
+}
+
+.player{
+    display: flex;
+    flex-direction: column;
+    gap: 50px ;
+}
+
+.pc{
+    display : flex ;
+    flex-direction: column;
+    gap: 50px;
+}
+.pl_sum{
+    display: flex;
+    flex-direction: row;
+    font-size: x-large;
+    font-weight: 900;
+    justify-content: space-around;
+
+}
+.pc_sum{
+    display:flex;
+    flex-direction: row;
+    font-size: x-large;
+    font-weight: 900;
+    justify-content: space-around;
+}
+
+
+#inf{
+    display: flex;
+    justify-content:space-around ;
+    padding: 4% ;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.bts{
+    
+    display: flex;
+    justify-content:center;
+    padding: 4% ;
+    gap:40px;
+
+
+}
+
+#rock{
+    background-image: url(https://w7.pngwing.com/pngs/21/946/png-transparent-pet-rock-cartoon-rock-s-pet-head-sports-equipment.png) ;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50% 50%;
+    height: 100px;
+    width: 100px;
+    border: none;
+
+}
+
+#paper{
+    background-image: url(https://i.pinimg.com/736x/4f/ae/cf/4faecfda18947d8e03ef0d188e4de42d.jpg) ;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50% 50%;
+    height: 100px;
+    width: 100px;
+    border: none;
+
+}
+
+#scissors{
+    background-image: url(https://www.nicepng.com/png/detail/86-869430_cartoon-scissors.png) ;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50% 50%;
+    height: 100px;
+    width: 100px;
+    border: none;
+
+}
+
+.footer{
+    display:flex;
+    justify-content: center;
+    padding: 20px
+}
+
+#restart{
+    background-color: #3882F6 ;
+    color:white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 7px;
+    border-width: 2px;
+    border-color: #F9FAF8;
+    padding:10px
+
+}
