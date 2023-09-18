@@ -131,6 +131,9 @@ document.getElementById('restart').addEventListener('click', function(){
     document.getElementById('pc_points').innerHTML = '';
     info = 'The world is in danger, Ultron has defeated every hero left and it all comes down to a Rock Paper Scissors Game ???? \n What is your first move ?' ;
     document.getElementById('inf').innerHTML = info;
+    document.getElementById('pl_moves').innerHTML = '';
+    document.getElementById('pc_moves').innerHTML = '';
+    
 
 } );
 
